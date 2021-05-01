@@ -1,0 +1,1108 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Litdex.Security.Cryptography</name>
+    </assembly>
+    <members>
+        <member name="T:Litdex.Security.Cryptography.Hash.BaseSHA">
+            <summary>
+            	Base implementation of MD4 family style digest as outlined in
+            	"Handbook of Applied Cryptography", pages 344 - 347.
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.BaseSHA.AlgorithmName">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.BaseSHA.Update(System.Byte)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.BaseSHA.Update(System.Byte[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.BaseSHA.Update(System.Byte[],System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.BaseSHA.DoFinal(System.Byte[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.BaseSHA.DoFinal(System.Byte[],System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.BaseSHA.ComputeHash(System.Byte[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.BaseSHA.ComputeHash(System.Byte[],System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.BaseSHA.Reset">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.BaseSHA.GetHashLength">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.BaseSHA.GetByteLength">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.BaseSHA.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="T:Litdex.Security.Cryptography.Hash.Blake2b">
+            <summary>
+            	Implementation of the cryptographic hash function Blakbe2b.
+            
+            	Blake2b offers a built-in keying mechanism to be used directly
+            	for authentication ("Prefix-MAC") rather than a HMAC construction.
+            
+            	Blake2b offers a built-in support for a salt for randomized hashing
+            	and a personal string for defining a unique hash function for each application.
+            
+            	BLAKE2b is optimized for 64-bit platforms and produces digests of any 
+            	between 1 and 64 bytes.
+            </summary>
+        </member>
+        <member name="F:Litdex.Security.Cryptography.Hash.Blake2b.key">
+            <summary>
+            	Key
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.Blake2b.#ctor(System.Int32)">
+            <summary>
+            	Create an instance of <see cref="T:Litdex.Security.Cryptography.Hash.Blake2b"/> object.
+            </summary>
+            <param name="digestSize">
+            	Size of hash values in bits.
+            </param>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.Blake2b.#ctor(System.Byte[])">
+            <summary>
+            	Blake2b for authentication ("Prefix-MAC mode").
+            </summary>
+            <param name="key">
+            	A key up to 64 bytes or null.
+            </param>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.Blake2b.#ctor(System.Byte[],System.Int32,System.Byte[],System.Byte[])">
+            <summary>
+            	Blake2b with key, required digest length (in bytes), salt and personalization.
+            </summary>
+            <param name="key">
+            	A key up to 64 bytes or null.
+            </param>
+            <param name="digestLength">
+            	From 1 up to 64 bytes.
+            </param>
+            <param name="salt">
+            	16 bytes or null.
+            </param>
+            <param name="personalization">
+            	16 bytes or null.
+            </param>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.Blake2b.Finalize">
+            <summary>
+            	Destructor.
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.Blake2b.Init">
+            <summary>
+            	Initialize chainValue
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.Blake2b.AlgorithmName">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.Blake2b.Reset">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.Blake2b.GetHashLength">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.Blake2b.GetByteLength">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.Blake2b.ClearKey">
+            <summary>
+             Overwrite the key if it is no longer used (zeroization).
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.Blake2b.ClearSalt">
+            <summary>
+            	Overwrite the salt (pepper) if it is secret and no longer used (zeroization).
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.Blake2b.Update(System.Byte)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.Blake2b.Update(System.Byte[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.Blake2b.Update(System.Byte[],System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.Blake2b.DoFinal(System.Byte[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.Blake2b.DoFinal(System.Byte[],System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.Blake2b.ComputeHash(System.Byte[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.Blake2b.ComputeHash(System.Byte[],System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.Blake2b.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="T:Litdex.Security.Cryptography.Hash.CSHAKE">
+            <summary>
+            	Customizable SHAKE function.
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.CSHAKE.#ctor(System.Int32,System.Byte[],System.Byte[])">
+            <summary>
+            	Create an instance of <see cref="T:Litdex.Security.Cryptography.Hash.CSHAKE"/> object.
+            </summary>
+            <param name="bitLength">
+            	bit length of the underlying SHAKE function, 128 or 256.
+            </param>
+            <param name="N">
+            	the function name string, note this is reserved for use by NIST. Avoid using it if not required.
+            </param>
+            <param name="S">
+            	the customization string - available for local use.
+            </param>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.CSHAKE.AlgorithmName">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.CSHAKE.Reset">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.CSHAKE.DoOutput(System.Byte[],System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Litdex.Security.Cryptography.Hash.IHash">
+            <summary>
+            	Interface structure of hash fuction.
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.IHash.AlgorithmName">
+            <summary>
+            	Hash algorithm name.
+            </summary>
+            <returns>
+            	The hash algorithm name.
+            </returns>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.IHash.Reset">
+            <summary>
+            	Reset the hash function back to it's initial state.
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.IHash.GetHashLength">
+            <summary>
+            	Return the size (in <see cref="T:System.Byte"/>) of the final hash produced by this hash function.
+            </summary>
+            <returns>
+            	The hash length.
+            </returns>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.IHash.GetByteLength">
+            <summary>
+            	Return the size (in <see cref="T:System.Byte"/>) of this hash function internal state.
+            </summary>
+            <returns>
+            	The internal state size.
+            </returns>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.IHash.Update(System.Byte)">
+            <summary>
+            	Computes the hash value for the specified input byte.
+            </summary>
+            <param name="input">
+            	The input to compute the hash code for.
+            </param>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.IHash.Update(System.Byte[])">
+            <summary>
+            	Computes the hash value for the specified input byte array.
+            </summary>
+            <param name="input">
+            	The input to compute the hash code for.
+            </param>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.IHash.Update(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            	Computes the hash value for the specified input byte array.
+            </summary>
+            <param name="input">
+            	The input to compute the hash code for.
+            </param>
+            <param name="startIndex">
+            	The start index into the input byte array from which to begin using data.
+            </param>
+            <param name="length">
+            	The number of bytes in the array to use as data.
+            </param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            	Requested length can't exceed from remaining length of array after the start index.
+            </exception>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.IHash.DoFinal(System.Byte[])">
+            <summary>
+            	Copy final hash value to <paramref name="output"/> array and reset the hash function.
+            </summary>
+            <param name="output">
+            	The computed hash code.
+            </param>
+            <returns>
+            	Size of computed hash code.
+            </returns>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.IHash.DoFinal(System.Byte[],System.Int32)">
+            <summary>
+            	Copy final hash value to <paramref name="output"/> array and reset the hash function.
+            </summary>
+            <param name="output">
+            	The computed hash code.
+            </param>
+            <param name="startIndex">
+            	The offset into the <paramref name="output"/> array from which index to begin copy the computed hash value..
+            </param>
+            <returns>
+            	Size of computed hash code.
+            </returns>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.IHash.ComputeHash(System.Byte[])">
+            <summary>
+            	Computes the hash value from <paramref name="input"/> array.
+            </summary>
+            <param name="input">
+            	The array of bytes to compute the hash value for.
+            </param>
+            <returns>
+            	The computed hash code.
+            </returns>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.IHash.ComputeHash(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            	Computes the hash value for the specified region of the specified byte array.
+            </summary>
+            <param name="input">
+            	The array of bytes to compute the hash value for.
+            </param>
+            <param name="startIndex">
+            	 The offset into the byte array from which to begin using data.
+            </param>
+            <param name="length">
+            	The number of bytes in the array to use as data.
+            </param>
+            <returns>
+            	The computed hash code.
+            </returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            	Requested length can't exceed from remaining length of array after the start index.
+            </exception>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.IHash.Clone">
+            <summary>
+            	Create clone of current object.
+            </summary>
+            <returns>
+            	Return a deep copy of this object.
+            </returns>
+        </member>
+        <member name="T:Litdex.Security.Cryptography.Hash.IHashExtend">
+            <summary>
+            	With FIPS PUB 202 a new kind of message digest was 
+            	announced which supported extendable output, 
+            	or variable hash value sizes.
+            
+            	This interface provides the extra method required to 
+            	support variable output on a hash implementation.
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.IHashExtend.DoFinal(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            	Output the results of the final calculation 
+            	for this digest to outLen number of bytes.
+            </summary>
+            <param name="output">
+            	Byte array the hash value is to be copied into.
+            </param>
+            <param name="startIndex">
+            	Offset into the output array the hash value is to start at.
+            </param>
+            <param name="outputlength">
+            	Length of bytes requested.
+            </param>
+            <returns>
+            	The number of bytes written.
+            </returns>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.IHashExtend.DoOutput(System.Byte[],System.Int32)">
+            <summary>
+            	Start outputting the results of the final calculation for this digest. Unlike DoFinal, this method
+            	will continue producing output until the Xof is explicitly reset, or signals otherwise.
+            </summary>
+            <param name="output">
+            	output array to write the output bytes to.</param>
+            <param name="startIndex">
+            	offset to start writing the bytes at.
+            </param>
+            <returns>
+            	the number of bytes written
+            </returns>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.IHashExtend.DoOutput(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            	Start outputting the results of the final calculation for this digest. Unlike DoFinal, this method
+            	will continue producing output until the Xof is explicitly reset, or signals otherwise.
+            </summary>
+            <param name="output">
+            	output array to write the output bytes to.</param>
+            <param name="startIndex">
+            	offset to start writing the bytes at.
+            </param>
+            <param name="outputlength">
+            	the number of output bytes requested.
+            </param>
+            <returns>
+            	the number of bytes written
+            </returns>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.IHashExtend.ComputeHash(System.Byte[],System.Int32,System.Int32,System.Int32)">
+            <summary>
+            	Computes the hash value for the specified region of the specified byte array.
+            </summary>
+            <param name="input">
+            	The array of bytes to compute the hash value for.
+            </param>
+            <param name="startIndex">
+            	 The offset into the byte array from which to begin using data.
+            </param>
+            <param name="length">
+            	The number of bytes in the array to use as data.
+            </param>
+            <param name="outputlength">
+            	the number of output bytes requested.
+            </param>
+            <returns>
+            	The computed hash code.
+            </returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            	Requested length can't exceed from remaining length of array after the start index.
+            </exception>
+        </member>
+        <member name="T:Litdex.Security.Cryptography.Hash.Keccak">
+            <summary>
+            	Implementation of Keccak based on following KeccakNISTInterface.c from http://keccak.noekeon.org/
+            </summary>
+            <remarks>
+            	Following the naming conventions used in the C source code to enable easy review of the implementation.
+            </remarks>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.Keccak.#ctor(System.Int32)">
+            <summary>
+            	Create an instance <see cref="T:Litdex.Security.Cryptography.Hash.Keccak"/> object.
+            </summary>
+            <param name="bitLength">
+            	Computed hash value length.
+            </param>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.Keccak.AlgorithmName">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.Keccak.Reset">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.Keccak.GetHashLength">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.Keccak.GetByteLength">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.Keccak.Update(System.Byte)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.Keccak.Update(System.Byte[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.Keccak.Update(System.Byte[],System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.Keccak.DoFinal(System.Byte[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.Keccak.DoFinal(System.Byte[],System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.Keccak.ComputeHash(System.Byte[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.Keccak.ComputeHash(System.Byte[],System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.Keccak.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="T:Litdex.Security.Cryptography.Hash.SHA1">
+            <summary>
+            	Implementation of SHA-1 as outlined in "Handbook of Applied Cryptography", pages 346 - 349. 
+            	It is interesting to ponder why the, apart from the extra IV, the other difference here from MD5
+            	is the "endianness" of the word processing!
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA1.#ctor">
+            <summary>
+            	Create an instance of <see cref="T:Litdex.Security.Cryptography.Hash.SHA1"/> object.
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA1.Finalize">
+            <summary>
+            	Destructor.
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA1.AlgorithmName">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA1.Reset">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA1.GetHashLength">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA1.DoFinal(System.Byte[],System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA1.ComputeHash(System.Byte[],System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA1.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="T:Litdex.Security.Cryptography.Hash.SHA256">
+            <summary>
+            	Implementation of SHA-2 256 bit.
+            </summary>
+        </member>
+        <member name="F:Litdex.Security.Cryptography.Hash.SHA256.K">
+            <summary>
+            	SHA-256 Constants.
+            	represent the first 32 bits 
+            	of the fractional parts of the 
+            	cube roots of the first sixty-four prime numbers.
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA256.#ctor">
+            <summary>
+            	Create an instance of <see cref="T:Litdex.Security.Cryptography.Hash.SHA256"/> object.
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA256.Finalize">
+            <summary>
+            	Destructor.
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA256.InitializeHashValue">
+            <summary>
+            	SHA-256 initial hash value.
+            	The first 32 bits of the fractional parts of
+            	the square roots of the first eight prime numbers.
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA256.AlgorithmName">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA256.Reset">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA256.GetHashLength">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA256.GetByteLength">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA256.DoFinal(System.Byte[],System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA256.ComputeHash(System.Byte[],System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA256.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="T:Litdex.Security.Cryptography.Hash.SHA3">
+            <summary>
+            	Implementation of SHA-3 based on following KeccakNISTInterface.c from http://keccak.noekeon.org/
+            </summary>
+            <remarks>
+            	Following the naming conventions used in the C source code to enable easy review of the implementation.
+            </remarks>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA3.#ctor(System.Int32)">
+            <summary>
+            	Create an instance of <see cref="T:Litdex.Security.Cryptography.Hash.SHA3"/> object.
+            </summary>
+            <param name="bitLength">
+            	Hash value length.
+            </param>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA3.Finalize">
+            <summary>
+            	Destructor.
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA3.AlgorithmName">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA3.DoFinal(System.Byte[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA3.DoFinal(System.Byte[],System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA3.ComputeHash(System.Byte[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA3.ComputeHash(System.Byte[],System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA3.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="T:Litdex.Security.Cryptography.Hash.SHA512">
+            <summary>
+            	Implementation of SHA-2 512 bit.
+            </summary>
+        </member>
+        <member name="F:Litdex.Security.Cryptography.Hash.SHA512.K">
+            <summary>
+            	SHA-384 and SHA-512 Constants.
+            	represent the first 64 bits of the fractional parts of the
+            	cube roots of the first sixty-four prime numbers.
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA512.#ctor">
+            <summary>
+            	Create an instance of <see cref="T:Litdex.Security.Cryptography.Hash.SHA512"/> object.
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA512.Finalize">
+            <summary>
+            	Destructor.
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA512.InitalizeHashValue">
+            <summary>
+            SHA-512 initial hash value.
+            The first 64 bits of the fractional parts of
+            the square roots of the first eight prime numbers.
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA512.AdjustByteCounts">
+            <summary>
+            	Adjust the byte counts so that byteCount2 represents the
+            	upper long (less 3 bits) word of the byte count.
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA512.Ch(System.UInt64,System.UInt64,System.UInt64)">
+            <summary>
+            	SHA-384 and SHA-512 functions (as for SHA-256 but for longs)
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="z"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA512.AlgorithmName">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA512.Reset">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA512.GetHashLength">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA512.GetByteLength">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA512.Update(System.Byte)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA512.Update(System.Byte[],System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA512.DoFinal(System.Byte[],System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA512.ComputeHash(System.Byte[],System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHA512.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="T:Litdex.Security.Cryptography.Hash.SHAKE">
+            <summary>
+            	Implementation of SHAKE based on following KeccakNISTInterface.c from http://keccak.noekeon.org/
+            </summary>
+            <remarks>
+            	Following the naming conventions used in the C source code to enable easy review of the implementation.
+            </remarks>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHAKE.#ctor(System.Int32)">
+            <summary>
+            	Create an instance of <see cref="T:Litdex.Security.Cryptography.Hash.SHAKE"/> object.
+            </summary>
+            <param name="bitLength">
+            	Output byte.
+            </param>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHAKE.Finalize">
+            <summary>
+            	Destructor.
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHAKE.AlgorithmName">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHAKE.DoFinal(System.Byte[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHAKE.DoFinal(System.Byte[],System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHAKE.DoFinal(System.Byte[],System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHAKE.ComputeHash(System.Byte[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHAKE.ComputeHash(System.Byte[],System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHAKE.ComputeHash(System.Byte[],System.Int32,System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHAKE.DoOutput(System.Byte[],System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHAKE.DoOutput(System.Byte[],System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.Hash.SHAKE.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="T:Litdex.Security.Cryptography.KDF.HKDF">
+            <summary>
+            	HMAC-based Key Derivation Function based on RFC 5869.
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.KDF.HKDF.#ctor">
+            <summary>
+            	Create an instance of <see cref="T:Litdex.Security.Cryptography.KDF.HKDF"/> object.
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.KDF.HKDF.#ctor(Litdex.Security.Cryptography.Hash.IHash)">
+            <summary>
+            	Create an instance of <see cref="T:Litdex.Security.Cryptography.KDF.HKDF"/> object.
+            </summary>
+            <param name="hash">
+            	Hash function tu use.
+            </param>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.KDF.HKDF.Finalize">
+            <summary>
+            	Destructor.
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.KDF.HKDF.Extract(System.Byte[],System.Byte[])">
+            <summary>
+            	Create a pseudorandom key.
+            </summary>
+            <param name="salt">
+            	Optional salt value.
+            </param>
+            <param name="InputKeyMaterial">
+            	Input key material.
+            </param>
+            <returns>
+            
+            </returns>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.KDF.HKDF.Expand(System.Byte[],System.Byte[],System.Int32)">
+            <summary>
+            	Expand key.
+            </summary>
+            <param name="prk">
+            	A pseudorandom key.
+            </param>
+            <param name="info">
+            	Optional context and application specific information.
+            </param>
+            <param name="length">
+            	Length of output keying materials.
+            </param>
+            <returns>
+            
+            </returns>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.KDF.HKDF.AlgorithmName">
+            <summary>
+            	Return the name of the algorithm the KDF implements.
+            </summary>
+            <returns>
+            	The algorithm name.
+            </returns>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.KDF.HKDF.Reset">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.KDF.HKDF.Derive(System.Byte[],System.Byte[],System.Byte[],System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.KDF.HKDF.Derive(System.Byte[],System.Byte[],System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Litdex.Security.Cryptography.KDF.PBKDF2">
+            <summary>
+            <para>
+            	Password-Based Key Derivation Function 2 (PBKDF2).
+            </para>
+            	PBKDF2 applies a pseudorandom function, 
+            	such as hash-based message authentication code (HMAC)
+            	to the input password along with a salt value and 
+            	repeats the process many times to produce a derived key.
+            <para>
+            	The added computational work makes password cracking 
+            	much more difficult, and is known as key stretching.
+            </para>
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.KDF.PBKDF2.#ctor">
+            <summary>
+            	Default constructor.
+            	with HMAC-SHA1.
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.KDF.PBKDF2.#ctor(Litdex.Security.Cryptography.Hash.IHash,System.Int32)">
+            <summary>
+            	Construtor with custom hash function.
+            </summary>
+            <param name="digest">Hash function.</param>
+            <param name="iteration"></param>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.KDF.PBKDF2.#ctor(Litdex.Security.Cryptography.Hash.IHash,Litdex.Security.Cryptography.MAC.IMAC,System.Int32)">
+            <summary>
+            Custom constructor.
+            </summary>
+            <param name="digest">Hash functon.</param>
+            <param name="mac">MAC function.</param>
+            <param name="iteration">Loop count.</param>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.KDF.PBKDF2.DeriveKey(System.Byte[],System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Compute derived key with PBKDF2 Algortihm.
+            </summary>
+            <param name="password">Password to derive.</param>
+            <param name="salt">Additional string.</param>
+            <param name="length">Derive key length.</param>
+            <param name="iteration">Iteration.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.KDF.PBKDF2.F(System.Byte[],System.Byte[],System.Int32,System.Byte[],System.Byte[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="password">Password.</param>
+            <param name="salt">Salt.</param>
+            <param name="iteration">Iteration.</param>
+            <param name="buffer">Buffer.</param>
+            <param name="result">Output buffer.</param>
+            <param name="offset">Output offset.</param>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.KDF.PBKDF2.UINT32_TO_BE(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Padding salt with Big Endian format.
+            </summary>
+            <param name="src"></param>
+            <param name="offset"></param>
+            <param name="i"></param>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.KDF.PBKDF2.UINT32_TO_BE(System.Byte[],System.Int32)">
+            <summary>
+            Padding salt with Big Endian format.
+            </summary>
+            <param name="src"></param>
+            <param name="offset"></param>
+            <param name="i"></param>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.KDF.PBKDF2.Reset">
+            <summary>
+            Reset the KDF.
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.KDF.PBKDF2.Derive(System.Byte[],System.Byte[],System.Int32)">
+            <summary>
+            Computes the derived key for specified byte array. 
+            </summary>
+            <param name="password">Data to derive.</param>
+            <param name="salt">Additional byte array.</param>
+            <param name="length">Output length.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.KDF.PBKDF2.Derive(System.Byte[],System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Computes the derived key for specified byte array. 
+            </summary>
+            <param name="password">Data to derive.</param>
+            <param name="salt">Additional byte array.</param>
+            <param name="length">Output length.</param>
+            <param name="iteration">Override loop count.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Litdex.Security.Cryptography.MAC.HMAC">
+            <summary>
+            	HMAC implementation based on RFC 2104.
+            </summary>
+            <remarks>
+            	H(K XOR opad, H(K XOR ipad, text))
+            </remarks>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.MAC.HMAC.#ctor(Litdex.Security.Cryptography.Hash.IHash)">
+            <summary>
+            	Create an instance of <see cref="T:Litdex.Security.Cryptography.MAC.HMAC"/> object.
+            </summary>
+            <param name="digest">
+            	Hash function to use.
+            </param>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.MAC.HMAC.Finalize">
+            <summary>
+            	Destructor.
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.MAC.HMAC.InitializeKey(System.Byte[])">
+            <summary>
+            	Initialize the MAC.
+            </summary>
+            <param name="key">
+            	key required by the MAC.
+            </param>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.MAC.HMAC.Initialize(System.Byte[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.MAC.HMAC.AlgorithmName">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.MAC.HMAC.Reset">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.MAC.HMAC.GetHashLength">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.MAC.HMAC.GetHashFunction">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.MAC.HMAC.GetUnderlyingDigest">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.MAC.HMAC.GetMacSize">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.MAC.HMAC.Update(System.Byte[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.MAC.HMAC.Update(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.MAC.HMAC.Update(System.Byte[],System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.MAC.HMAC.DoFinal(System.Byte[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.MAC.HMAC.DoFinal(System.Byte[],System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.MAC.HMAC.ComputeHash(System.Byte[],System.Byte[])">
+            <inheritdoc/>
+        </member>
+        <member name="T:Litdex.Security.Cryptography.MAC.IMAC">
+            <summary>
+            	The base interface for implementations of 
+            	message authentication codes (MACs).
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.MAC.IMAC.Initialize(System.Byte[])">
+            <summary>
+            	Initialise the MAC.
+            </summary>
+            <param name="key">
+            	Key required by the <see cref="N:Litdex.Security.Cryptography.MAC"/>.
+            </param>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.MAC.IMAC.AlgorithmName">
+            <summary>
+            	Return the name of the algorithm the MAC implements.
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.MAC.IMAC.Reset">
+            <summary>
+            	Reset the MAC. At the end of resetting the MAC should be in the
+            	same state it was after the last init (if there was one).
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.MAC.IMAC.GetHashFunction">
+            <summary>
+            	Get used hash funtion in the MAC.
+            </summary>
+            <returns>
+            	The Hash function that this <see cref="N:Litdex.Security.Cryptography.MAC"/> use.
+            </returns>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.MAC.IMAC.GetHashLength">
+            <summary>
+            	Return the size (in <see cref="T:System.Byte"/>) of the hash value produced 
+            	by this hash function.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.MAC.IMAC.Update(System.Byte[])">
+            <summary>
+            	Update the HMAC value with a array of bytes.
+            </summary>
+            <param name="input">
+            	Input byte array to be hashed.
+            </param>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.MAC.IMAC.Update(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            	Computes the hash value for the specified input byte array.
+            </summary>
+            <param name="input">
+            	The input to compute the hash code for.
+            </param>
+            <param name="startIndex">
+            	The start index into the input byte array from which to begin using data.
+            </param>
+            <param name="length">
+            	The number of bytes in the array to use as data.
+            </param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            	Requested length can't exceed from remaining length of array after the start index.
+            </exception>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.MAC.IMAC.DoFinal(System.Byte[])">
+            <summary>
+            	Copy final hash value and reset the hash function.
+            </summary>
+            <param name="output">
+            	The computed hash code.
+            </param>
+            <returns>
+            	Size of computed hash code.
+            </returns>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.MAC.IMAC.DoFinal(System.Byte[],System.Int32)">
+            <summary>
+            	Copy final hash value and reset the hash function.
+            </summary>
+            <param name="output">
+            	The computed hash code.
+            </param>
+            <param name="startIndex">
+            	The offset into the byte array from which to begin using data.
+            </param>
+            <returns>
+            	Size of computed hash code.
+            </returns>
+        </member>
+        <member name="M:Litdex.Security.Cryptography.MAC.IMAC.ComputeHash(System.Byte[],System.Byte[])">
+            <summary>
+            	Computes the hash value for the specified region of the specified byte array.
+            </summary>
+            <param name="keys">
+            	MAC key.
+            </param>
+            <param name="input">
+            	Message to hash.
+            </param>
+            <returns>
+            	The computed hash code.
+            </returns>
+        </member>
+        <member name="F:Litdex.Security.Hash.HashAlgorithm.Blake2b_256">
+            <summary>
+            Blake2b 256bit.
+            </summary>
+        </member>
+        <member name="F:Litdex.Security.Hash.HashAlgorithm.Blake2b_512">
+            <summary>
+            Blake2b 512bit.
+            </summary>
+        </member>
+        <member name="F:Litdex.Security.Hash.HashAlgorithm.SHA_1">
+            <summary>
+            SHA-1.
+            </summary>
+        </member>
+        <member name="F:Litdex.Security.Hash.HashAlgorithm.SHA2_256">
+            <summary>
+            SHA-2 256bit.
+            </summary>
+        </member>
+        <member name="F:Litdex.Security.Hash.HashAlgorithm.SHA2_512">
+            <summary>
+            SHA-2 512bit.
+            </summary>
+        </member>
+        <member name="F:Litdex.Security.Hash.HashAlgorithm.SHA3_256">
+            <summary>
+            SHA-3 256bit.
+            </summary>
+        </member>
+        <member name="F:Litdex.Security.Hash.HashAlgorithm.SHA3_512">
+            <summary>
+            SHA-3 512bit.
+            </summary>
+        </member>
+        <member name="T:Litdex.Security.KDF.IKDF">
+            <summary>
+            	Key derivation Function
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.KDF.IKDF.AlgorithmName">
+            <summary>
+            	Return the name of the algorithm the KDF implements.
+            </summary>
+            <returns>
+            	
+            </returns>
+        </member>
+        <member name="M:Litdex.Security.KDF.IKDF.Reset">
+            <summary>
+            	Reset the KDF.
+            </summary>
+        </member>
+        <member name="M:Litdex.Security.KDF.IKDF.Derive(System.Byte[],System.Byte[],System.Int32)">
+            <summary>
+            	Computes the derived key for specified byte array. 
+            </summary>
+            <param name="data">
+            	Data to derive.
+            </param>
+            <param name="salt">
+            	Additional byte array.
+            </param>
+            <param name="length">
+            	Output length.
+            </param>
+            <returns>
+            	Computed byte array.
+            </returns>
+        </member>
+    </members>
+</doc>

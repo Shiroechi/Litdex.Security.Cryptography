@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net5.0</TargetFrameworks>
+    <RootNamespace>Litdex</RootNamespace>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Version>1.0.0</Version>
+    <Authors>Shiroechi</Authors>
+    <Company>Litdex</Company>
+    <Copyright>Shiroechi</Copyright>
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageProjectUrl>https://github.com/Shiroechi/Litdex.Security.Cryptography</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageIcon></PackageIcon>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <RepositoryUrl>https://github.com/Shiroechi/Litdex.Security.Cryptography</RepositoryUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
+    <Optimize>true</Optimize>
+    <DocumentationFile></DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
+    <DocumentationFile>D:\Project\C#\Litdex\Litdex.Security.Cryptography\Litdex.Security.Cryptography.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Source\Original\**" />
+    <EmbeddedResource Remove="Source\Original\**" />
+    <None Remove="Source\Original\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Source\Blake2bDigest.cs" />
+    <Compile Remove="Source\CSHAKEDigest.cs" />
+    <Compile Remove="Source\KeccakDigest.cs" />
+    <Compile Remove="Source\KMac.cs" />
+    <Compile Remove="Source\XofUtils.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="LICENSE" />
+    <None Remove="LICENSE" />
+    <None Include="LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Litdex.Utilities" Version="1.1.0" />
+  </ItemGroup>
+
+</Project>
